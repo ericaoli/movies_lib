@@ -1,0 +1,85 @@
+@use 'variables'
+
+.container
+    margin-top: 100px
+    width: 100%
+    .title
+        color: variables.$primary-color
+        font-size: 3.5rem
+        text-align: center
+        margin: 2rem 0 1rem
+
+        .query-text 
+            color: variables.$primary-color
+
+    .movies-container   
+        display: flex
+        flex-wrap: wrap
+        gap: 0.1rem
+        justify-content: space-between
+        padding: 2rem
+        max-width: 1200px
+        width: 100%
+        margin: 0 auto
+        svg
+            color: variables.$primary-color
+                 
+.movie-card
+    width: 20%
+    color: #fff
+    margin-bottom: 2.5rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    transition: 0.5s ease
+    opacity: 0.8
+    &:hover
+        opacity: 1.5
+
+    h2, p
+        margin-bottom: 1rem
+        font-size: 1rem
+    img
+        max-width: 100%
+        width: 100%
+        height: auto
+        border-radius: 5px
+        margin-bottom: 1rem
+        object-fit: cover
+
+
+    a
+        width: 80%
+        margin: auto
+        text-decoration: none
+        color: #000
+        font-size: 1rem
+        font-weight: bold
+        text-align: center
+        background-color: variables.$primary-color
+        padding: 1rem .5rem
+        border: 2px solid variables.$primary-color
+        border-radius: 4px
+        transition: 0.5s ease
+        &:hover
+            background: transparent
+            color: variables.$primary-color
+            scale: 1.1
+ 
+@media only screen and (max-width: 768px) 
+    .movies-container   
+        flex-wrap: wrap
+        max-width: 100%
+    
+    .container
+        margin-top: 150px
+    
+        .title
+            font-size: 2rem
+    
+    .movie-card
+        width: 90%
+        margin: auto
+
+    .img-container
+        position: relative
