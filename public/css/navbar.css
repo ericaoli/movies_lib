@@ -1,0 +1,86 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 30px 80px;
+  transition: 0.5s;
+  z-index: 10000;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#navbar h2 a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #f7d354;
+  transition: 0.5s;
+}
+#navbar h2 a:hover {
+  color: #b8930c;
+}
+#navbar .search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+#navbar .search input {
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  border-radius: 4px;
+  padding: 0 10px 0 45px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+#navbar .search button {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: xx-large;
+  background: none;
+  border: none;
+  padding: 0;
+}
+#navbar .search button .icon {
+  padding-right: 10px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+#navbar .search button .icon:hover {
+  background-color: transparent;
+  color: #f7d354;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  #navbar .search {
+    width: 200px;
+    height: 30px;
+    padding: 1.5rem 1rem;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
