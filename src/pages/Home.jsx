@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import MovieCard from '../components/MovieCard';
 import CarouselMovie from '../components/CarouselMovie';
-import '../components/styles/home.sass'
 import '../components/styles/moviegrid.sass'
 
 

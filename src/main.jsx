@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import './components/styles/main.sass'
+
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
 import Movie from './pages/Movie.jsx'
