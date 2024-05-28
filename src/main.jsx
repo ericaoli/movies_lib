@@ -11,10 +11,10 @@ import Search from './pages/Search.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/movies_lib">
       <Routes>
-        <Route element={<App />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
           <Route path="movie/:id" element={<Movie />} />
           <Route path="search" element={<Search />} />
         </Route>
