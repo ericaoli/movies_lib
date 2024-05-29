@@ -27,9 +27,9 @@
 
 ### Structure JSX
 
-- **<main>**: L'élément principal de la page.
-  - **<div className='container'>**: Contient le contenu principal de la page.
-    - **<CarouselMovie />**: Un composant qui affiche un carrousel de films mieux notés.
-    - **<h2 className="title">Films du moment :</h2>**: Un en-tête pour la section des films.
-    - **<div className="movies-container">**: Contient la liste des cartes de films.
-      - **<MovieCard key={movie.id} movie={movie} />**: Rend une carte pour chaque film dans le tableau `nowMovies`.
+- `<main>`: L'élément principal de la page.
+  - `<div className='container'>`: Contient le contenu principal de la page.
+    - `<CarouselMovie />`: Un composant qui affiche un carrousel de films mieux notés.
+    - `<h2 className="title">`Films du moment :`</h2>`: Un en-tête pour la section des films.
+    - `<div className="movies-container">`: Contient la liste des cartes de films.
+      - `<MovieCard key={movie.id} movie={movie} />`: Rend une carte pour chaque film dans le tableau `nowMovies`.
