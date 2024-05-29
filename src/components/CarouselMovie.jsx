@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/carousel.sass'
 
+
 const heroImageUrl = import.meta.env.VITE_HERO_IMG
 const moviesUrl = import.meta.env.VITE_API
 const apiKey = import.meta.env.VITE_API_KEY
