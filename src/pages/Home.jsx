@@ -26,7 +26,6 @@ const Home = () => {
   }, [])
 
   
-
   return (
     <main>
       <div className='container'>
