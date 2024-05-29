@@ -19,7 +19,9 @@
 
 ### Fonctions
 
-- **getNowListedMovies**: fonction asynchrone qui récupère les films du moment à partir d'une URL donnée, analyse la réponse en JSON et met à jour l'état `nowMovies` avec les résultats.
+- `getNowListedMovies`: fonction asynchrone qui récupère les films du moment à partir d'une URL donnée, analyse la réponse en JSON et met à jour l'état `nowMovies` avec les résultats.
+
+- gestion d'erreurs: utilisation de `try / catch` pour la capture et le traitement des erreurs => si la requête vers l'API échoue ou si la réponse renvoyée par l'API n'est pas dans le format attendu, une erreur sera lancée. Évite de laisser l'application échouer silencieusement ou se briser complètement et garantit que l'application puisse continuer à fonctionner de manière prévisible.
 
 ### Hooks
 
@@ -28,8 +30,8 @@
 ### Structure JSX
 
 - `<main>`: L'élément principal de la page.
-  - `<div className='container'>`: Contient le contenu principal de la page.
-    - `<CarouselMovie />`: Un composant qui affiche un carrousel de films mieux notés.
-    - `<h2 className="title">`Films du moment :`</h2>`: Un en-tête pour la section des films.
-    - `<div className="movies-container">`: Contient la liste des cartes de films.
-      - `<MovieCard key={movie.id} movie={movie} />`: Rend une carte pour chaque film dans le tableau `nowMovies`.
+   - `<div className='container'>`: Contient le contenu principal de la page.
+   - `<CarouselMovie />`: Un composant qui affiche un carrousel de films mieux notés.
+   - `<h2 className="title">`Films du moment :`</h2>`: Un en-tête pour la section des films.
+   - `<div className="movies-container">`: Contient la liste des cartes de films.
+   -  `<MovieCard key={movie.id} movie={movie} />`: Rend une carte pour chaque film dans le tableau `nowMovies`.
