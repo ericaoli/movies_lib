@@ -25,7 +25,7 @@ const CarouselMovie = () => {
         console.log(data.results);
     }
     useEffect(() => {
-        const heroUrl = `${moviesUrl}top_rated?${apiKey}`
+        const heroUrl = `${moviesUrl}top_rated?${apiKey}&language=fr`
         console.log(`heroUrl : ${heroUrl}`);
         getHeroMovies(heroUrl)
     

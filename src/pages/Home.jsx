@@ -36,7 +36,7 @@ const getNowListedMovies = async (url) => {
 
   // Hook useEffect pour récupérer les films lorsque le composant est monté
 useEffect(() => {
-  const nowMoviesUrl = `${moviesUrl}now_playing?${apiKey}` // Construit l'URL pour récupérer les films
+  const nowMoviesUrl = `${moviesUrl}now_playing?${apiKey}&language=fr` // Construit l'URL pour récupérer les films
   //console.log(`films du moment : ${nowMoviesUrl}`);
   getNowListedMovies(nowMoviesUrl) //Appelle la fonction pour récupérer les films
   }, [])
