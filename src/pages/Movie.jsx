@@ -18,11 +18,11 @@ const backgroundImageUrl = import.meta.env.VITE_BACKGROUND_IMG
 
 const Movie = () => {
 
-  const {id} = useParams() // Utilisé pour extraire l'ID du film de l'URL.
-  const [movie, setMovie] = useState(null) //UseState : utilisé pour gérer l'état local du composant, comme les informations du film et l'ID de la bande-annonce.
+  const {id} = useParams() // Pour extraire l'ID du film de l'URL.
+  const [movie, setMovie] = useState(null) //UseState : pour gérer l'état local du composant, comme les informations du film et l'ID de la bande-annonce.
   const [trailerId, setTrailerId] = useState(null) // bande-annonce
-  const [error, setError] = useState(null); // État pour gérer les erreurs.
-  const [trailerError, setTrailerError] = useState(null); // État pour gérer l'absence de trailer.
+  const [error, setError] = useState(null); // Pour gérer les erreurs.
+  const [trailerError, setTrailerError] = useState(null); // Pour gérer l'absence de trailer.
 
   //Fonction asynchrone pour récupérer les données du film à partir de l'API et mettre à jour l'état movie.
   const getMovie = async(url) => {
@@ -73,7 +73,7 @@ const Movie = () => {
   }, [id])
 
 
-// Pour la gestion des erreurs concernant les informations des films
+// Pour la gestion des erreurs et affichage des informations des films
   const renderMovieInfo = (icon, label, value) => {
     return (
       <div className="info">
@@ -82,7 +82,7 @@ const Movie = () => {
     );
   };
   
-  
+
   return (
     <div className="container-movie"> {/* Conteneur principal du composant. */}
       {error && <p className="error-message">{error}</p>}{/* Affiche un message d'erreur si une erreur est survenue */}
