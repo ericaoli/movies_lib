@@ -42,10 +42,13 @@ const CarouselMovie = () => {
         return words.slice(0, maxWords).join(' ') + '...';
       };
   
+      const myDot = ({ isActive }) => (
+        <span className={`carousel-dot ${isActive ? 'active' : ` `}`}></span>
+      )
 
   return (
           <div className="hero-carousel">
-            <Carousel  cols={1} rows={1} gap={10} loop> 
+            <Carousel  cols={1} rows={1} gap={10}  showDots={true} loop={true} dot={myDot}> 
                 {randomHeros.map((hero, index) => (
                   <Carousel.Item key={index}> 
                     <div  key={index} className="hero-slide" style={{ backgroundImage: `url('${heroImageUrl}${hero.backdrop_path}')`}}>
