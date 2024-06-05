@@ -69,4 +69,4 @@
 
 - `formatCurrency` : formate les nombres en devise americaine.
 
-- `renderMovieInfo` : 
+- `renderMovieInfo` : affiche les informations du film avec icône, label, valeur et le message "Information non disponible", si c'est le cas.

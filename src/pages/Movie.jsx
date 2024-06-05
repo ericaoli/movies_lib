@@ -55,11 +55,16 @@ const Movie = () => {
   
 
 // Fonction pour formater un nombre en devise américaine (USD).
+// Si la valeur est > 0, affiche l'information, sinon affiche "Information non disponible"
   const formatCurrency = (number) => {
-    return number.toLocaleString("en-US", {
+    if(number > 0) {
+          return number.toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
     })
+    } else {
+        return null
+    }
   }
 
 //Effectue des effets secondaires, comme la récupération des données du film et de la bande-annonce à partir de l'API.
@@ -90,21 +95,23 @@ const Movie = () => {
       {/* movie-page: conteneur de l'image de fond du film. */}
       <div className="movie-page"style={{ backgroundImage: movie ? `url('${backgroundImageUrl}${movie.backdrop_path}')` : "none"}}> </div> 
         
+        {/* Si movie n'est pas null ou undefined et error est false ou null, affiche les résultats */}
         {movie && !error &&(
           <div className="info-grid"> {/* Grille d'information du film, comprenant le titre, le slogan, le budget, les recettes, la durée et la description. */}
             <h1>{movie.title}</h1>
             <h2>{movie.tagline}</h2>
             
             {/* Composant pour afficher la bande-annonce du film. */}
+            {/* Si trailerId est défini, le composant Youtube est rendu. Sinon, vérifie si trailerError est défini et a une valeur (non null ou undefined). trailerError est une variable d'état qui contient un message d'erreur si la récupération de la bande-annonce a échoué. */}
             {trailerId ?
              (<Youtube videoId={trailerId} className="trailer"/>) : (trailerError && <p className="error">{trailerError}</p>)
             } 
-           
-            {renderMovieInfo(<BsWallet2 />, "Budget", movie.budget ? formatCurrency(movie.budget) : null)}
-            {renderMovieInfo(<BsGraphUp />, "Facturation", movie.revenue ? formatCurrency(movie.revenue) : null)}
-            {renderMovieInfo(<BsHourglassSplit />, "Durée", movie.runtime ? `${movie.runtime} minutes` : null)}
+            {/* Affichage des informations du film avec les icônes */}
+      
+            {renderMovieInfo(<BsWallet2 />, "Budget", formatCurrency(movie.budget))}
+            {renderMovieInfo(<BsGraphUp />, "Facturation", formatCurrency(movie.revenue))}
+            {renderMovieInfo(<BsHourglassSplit />, "Durée", `${movie.runtime} minutes`)}
             {renderMovieInfo(<BsFillFileEarmarkTextFill />, "Description", movie.overview)}
-            
           </div>
         )}   
     </div>
